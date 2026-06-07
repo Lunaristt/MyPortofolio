@@ -9,7 +9,7 @@ async function loadSections() {
 
   for (const file of SECTIONS) {
     try {
-      const res  = await fetch(file);
+      const res = await fetch(file);
       const html = await res.text();
       const temp = document.createElement('div');
       temp.innerHTML = html;
@@ -34,7 +34,7 @@ async function loadSections() {
 // ── CURSOR ──
 function initCursor() {
   const cursor = document.getElementById('cursor');
-  const ring   = document.getElementById('cursorRing');
+  const ring = document.getElementById('cursorRing');
   let mx = 0, my = 0, rx = 0, ry = 0;
 
   document.addEventListener('mousemove', e => {
@@ -46,9 +46,9 @@ function initCursor() {
     rx += (mx - rx) * 0.12;
     ry += (my - ry) * 0.12;
     cursor.style.left = mx + 'px';
-    cursor.style.top  = my + 'px';
-    ring.style.left   = rx + 'px';
-    ring.style.top    = ry + 'px';
+    cursor.style.top = my + 'px';
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
     requestAnimationFrame(animateCursor);
   })();
 }
@@ -131,7 +131,7 @@ async function loadGitHub() {
     const reposRes = await fetch(
       `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=12`
     );
-    const grid    = document.getElementById('reposGrid');
+    const grid = document.getElementById('reposGrid');
     const loadMsg = document.getElementById('loadingMsg');
     if (loadMsg) loadMsg.remove();
 
@@ -140,7 +140,7 @@ async function loadGitHub() {
       return;
     }
 
-    const repos    = await reposRes.json();
+    const repos = await reposRes.json();
     const filtered = repos.filter(r => !r.fork);
 
     if (filtered.length === 0) {
@@ -151,16 +151,15 @@ async function loadGitHub() {
     filtered.forEach((repo, idx) => {
       const card = document.createElement('a');
       card.className = 'repo-card reveal';
-      card.href      = repo.html_url;
-      card.target    = '_blank';
-      card.rel       = 'noopener noreferrer';
+      card.href = repo.html_url;
+      card.target = '_blank';
+      card.rel = 'noopener noreferrer';
       card.style.transitionDelay = (idx % 4) * 0.1 + 's';
       card.innerHTML = `
         <div class="repo-name">${repo.name}</div>
         <div class="repo-desc">${repo.description || 'No description provided.'}</div>
         <div class="repo-meta">
           ${repo.language ? `<span class="repo-lang">${repo.language}</span>` : ''}
-          <span>★ ${repo.stargazers_count}</span>
           ${repo.updated_at ? `<span>${new Date(repo.updated_at).getFullYear()}</span>` : ''}
         </div>`;
       grid.appendChild(card);
