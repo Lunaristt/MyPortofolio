@@ -2,7 +2,7 @@
 // Fetches each section partial and injects it into #app in order.
 // All observers and GitHub logic run only after all sections are mounted.
 
-const SECTIONS = ['home.html', 'about.html', 'education.html', 'org.html', 'work.html'];
+const SECTIONS = ['home.html', 'about.html', 'education.html', 'work.html', 'org.html', 'repo.html'];
 
 async function loadSections() {
   const app = document.getElementById('app');

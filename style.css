@@ -1,19 +1,21 @@
 /* ── RESET & VARIABLES ── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 :root {
-  --bg:        #1c1917;
-  --bg-light:  #252220;
-  --surface:   #2a2724;
-  --text:      #f5f0eb;
-  --muted:     #b8b0a8;
-  --accent:    #e8e0d5;
-  --line:      rgba(245, 240, 235, 0.25);
-  --gold:      #c9b99a;
+  --bg: #1c1917;
+  --bg-light: #252220;
+  --surface: #2a2724;
+  --text: #f5f0eb;
+  --muted: #b8b0a8;
+  --accent: #e8e0d5;
+  --line: rgba(245, 240, 235, 0.25);
+  --gold: #c9b99a;
 }
 
 html {
@@ -188,9 +190,17 @@ section {
   animation: fadeIn 0.4s ease forwards;
 }
 
-.hero-dots span:nth-child(1) { animation-delay: 1.2s; }
-.hero-dots span:nth-child(2) { animation-delay: 1.4s; }
-.hero-dots span:nth-child(3) { animation-delay: 1.6s; }
+.hero-dots span:nth-child(1) {
+  animation-delay: 1.2s;
+}
+
+.hero-dots span:nth-child(2) {
+  animation-delay: 1.4s;
+}
+
+.hero-dots span:nth-child(3) {
+  animation-delay: 1.6s;
+}
 
 .hero-line-br {
   position: absolute;
@@ -342,6 +352,29 @@ section {
   margin-top: 0.3rem;
 }
 
+/* Project images below description */
+.edu-image {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+
+.edu-image img {
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid var(--line);
+  filter: grayscale(40%) contrast(1.05);
+  transition: filter 0.3s, border-color 0.3s, transform 0.3s;
+  object-fit: cover;
+}
+
+.edu-image img:hover {
+  filter: grayscale(0%) contrast(1.1);
+  border-color: var(--gold);
+  transform: scale(1.02);
+}
+
 /* ── ORG EXPERIENCE ── */
 #org {
   background: radial-gradient(ellipse at 70% 50%, #252220 0%, #1c1917 70%);
@@ -396,7 +429,7 @@ section {
 }
 
 /* ── MY WORK ── */
-#work {
+#repo {
   background: var(--bg);
   flex-direction: column;
   align-items: flex-start;
@@ -404,7 +437,7 @@ section {
   padding-right: max(3rem, calc(50vw - 430px));
 }
 
-#work .section-title {
+#repo .section-title {
   margin-bottom: 3rem;
 }
 
@@ -489,22 +522,6 @@ footer {
   text-transform: uppercase;
 }
 
-footer > * {
-  flex: 1;
-}
-
-footer > *:nth-child(1) {
-  text-align: left;
-}
-
-footer > *:nth-child(2) {
-  text-align: center;
-}
-
-footer > *:nth-child(3) {
-  text-align: right;
-}
-
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
   to {
@@ -514,7 +531,9 @@ footer > *:nth-child(3) {
 }
 
 @keyframes fadeIn {
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
 
 /* ── RESPONSIVE ── */
@@ -524,24 +543,45 @@ footer > *:nth-child(3) {
     gap: 2rem;
     text-align: center;
   }
+
   .about-line {
     margin: 2rem auto 0;
   }
+
   nav {
     padding: 0 1.2rem;
   }
+
   .nav-links {
     gap: 1.2rem;
   }
+
   section {
     padding: 5rem 1.5rem;
   }
-  footer {
-    flex-direction: column;
-    gap: 0.8rem;
-    padding: 2rem 1.5rem;
-  }
-  footer > * {
-    text-align: center !important;
-  }
+}
+
+/* ── ORG CARD LINK ── */
+a.org-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: none;
+}
+
+.org-card-arrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.org-card:hover .org-card-arrow {
+  opacity: 1;
+  transform: translateX(0);
 }
