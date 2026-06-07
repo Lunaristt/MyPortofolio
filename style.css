@@ -489,6 +489,22 @@ footer {
   text-transform: uppercase;
 }
 
+footer > * {
+  flex: 1;
+}
+
+footer > *:nth-child(1) {
+  text-align: left;
+}
+
+footer > *:nth-child(2) {
+  text-align: center;
+}
+
+footer > *:nth-child(3) {
+  text-align: right;
+}
+
 /* ── ANIMATIONS ── */
 @keyframes fadeUp {
   to {
@@ -519,5 +535,13 @@ footer {
   }
   section {
     padding: 5rem 1.5rem;
+  }
+  footer {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 2rem 1.5rem;
+  }
+  footer > * {
+    text-align: center !important;
   }
 }
