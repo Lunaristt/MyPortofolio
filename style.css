@@ -97,6 +97,7 @@ nav {
   display: flex;
   gap: 2.5rem;
   list-style: none;
+  flex-wrap: nowrap;
 }
 
 .nav-links a {
@@ -109,6 +110,7 @@ nav {
   text-decoration: none;
   transition: color 0.25s;
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-links a::after {
@@ -238,7 +240,6 @@ section {
   height: 280px;
   border-radius: 50%;
   object-fit: cover;
-  filter: grayscale(100%) contrast(1.1);
   border: 1px solid var(--line);
   opacity: 0;
   transform: scale(0.9);
@@ -549,11 +550,21 @@ footer {
   }
 
   nav {
-    padding: 0 1.2rem;
+    padding: 0 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-line {
+    display: none;
   }
 
   .nav-links {
     gap: 1.2rem;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
   }
 
   section {

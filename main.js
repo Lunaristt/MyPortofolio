@@ -117,7 +117,6 @@ async function loadGitHub() {
       const profile = await profileRes.json();
       const photo = document.getElementById('profilePhoto');
       if (photo) {
-        photo.src = profile.avatar_url;
         photo.onerror = () => {
           photo.parentElement.innerHTML =
             `<div class="about-photo-placeholder">No photo available</div>`;
