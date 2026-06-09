@@ -376,6 +376,24 @@ section {
   transform: scale(1.02);
 }
 
+/* ── WORK EXPERIENCE LIST ── */
+.work-list {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+  list-style: disc;
+}
+
+.work-list li {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 0.3rem;
+}
+
+.work-list li::marker {
+  color: var(--gold);
+}
+
 /* ── ORG EXPERIENCE ── */
 #org {
   background: radial-gradient(ellipse at 70% 50%, #252220 0%, #1c1917 70%);
@@ -509,6 +527,59 @@ section {
   font-size: 0.9rem;
 }
 
+/* ── REPO SUBSECTION TITLES ── */
+.repo-subsection-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 3rem;
+  margin-bottom: 1.2rem;
+  width: 100%;
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+.repo-subsection-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+}
+
+#repo .repo-subsection-title:first-of-type {
+  margin-top: 0;
+}
+
+/* ── PROJECT CARD IMAGES ── */
+.project-images {
+  margin-top: 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.6rem;
+}
+
+.project-images img {
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid var(--line);
+  filter: grayscale(40%) contrast(1.05);
+  transition: filter 0.3s, border-color 0.3s, transform 0.3s;
+  object-fit: cover;
+  max-height: 180px;
+}
+
+.project-images img:hover {
+  filter: grayscale(0%) contrast(1.1);
+  border-color: var(--gold);
+  transform: scale(1.02);
+}
+
 /* ── FOOTER ── */
 footer {
   border-top: 1px solid var(--line);
@@ -569,6 +640,14 @@ footer {
 
   section {
     padding: 5rem 1.5rem;
+  }
+
+  .project-images {
+    grid-template-columns: 1fr;
+  }
+
+  .project-images img {
+    max-height: none;
   }
 }
 
