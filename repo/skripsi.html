@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thesis Final Project – Steven Lucio Austen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="repo-detail.css" />
+</head>
+
+<body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Back Button -->
+    <a href="../index.html#repo" class="detail-back">← Back to Portfolio</a>
+
+    <!-- ═══ HERO: Project Overview ═══ -->
+    <div class="detail-page detail-hero">
+        <div class="about-inner">
+
+            <!-- Left: project thumbnail -->
+            <div class="about-photo-wrap">
+                <div class="detail-photo-square">
+                    <img src="../Pictures/Skripsi.png" alt="Thesis Final Project" />
+                </div>
+            </div>
+
+            <!-- Right: overview text -->
+            <div class="about-text">
+                <div class="detail-year-label">University — Final Year</div>
+                <h2>Thesis Final Project</h2>
+                <p>
+                    Independently designed and developed a web-based cashier and inventory management application using
+                    Laravel and MySQL. Key features include an automatic low-stock notification system, payment deadline
+                    reminders to distributors, basic inventory management, and automatic transaction tax calculation.
+                    Received a grade of 80.80 (A).
+                </p>
+                <div class="about-line"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ═══ SECTION: Research & Development ═══ -->
+    <div class="detail-section">
+        <div class="detail-section-inner">
+            <div class="detail-role-label">Research & Development</div>
+            <p>
+                The project began with an in-depth analysis of client's requirements, identifying pain points
+                such as manual stock tracking, missed distributor payment deadlines, and error-prone tax calculations. A
+                literature review of comparable systems informed the feature set and technical architecture.
+            </p>
+            <p>
+                Built on the Laravel framework with a MySQL relational database, the application follows
+                the MVC (Model-View-Controller) pattern for clean separation of concerns. The back-end
+                handles business logic — including automated low-stock threshold detection that triggers
+                real-time notifications, scheduled payment deadline reminders sent to distributors, and
+                rule-based transaction tax calculation conforming to applicable tax regulations.
+            </p>
+            <p>
+                The front-end was designed with usability in mind, providing a streamlined cashier
+                interface for quick point-of-sale transactions alongside a comprehensive inventory
+                dashboard for monitoring stock levels, supplier information, and purchase history.
+                The system was tested through functional testing and user acceptance testing, ultimately
+                achieving a final grade of 80.80 (A).
+            </p>
+            <div class="detail-tags">
+                <span class="detail-tag">Laravel</span>
+                <span class="detail-tag">MySQL</span>
+                <span class="detail-tag">PHP</span>
+                <span class="detail-tag">Inventory Management</span>
+                <span class="detail-tag">POS System</span>
+                <span class="detail-tag">MVC Architecture</span>
+                <span class="detail-tag">Thesis</span>
+            </div>
+
+            <div class="detail-gallery detail-gallery-full">
+                <img src="../Pictures/Skripsi.png" alt="Thesis Project Preview" />
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ SECTION: Key Highlights ═══ -->
+    <div class="detail-section">
+        <div class="detail-section-inner">
+            <div class="detail-role-label">Key Highlights</div>
+            <ul class="detail-highlights">
+                <li>Independently designed, developed, and deployed a full-stack web application using Laravel and MySQL
+                </li>
+                <li>Implemented automatic low-stock notification system to alert users when inventory falls below
+                    threshold</li>
+                <li>Built scheduled payment deadline reminders for distributor invoices</li>
+                <li>Developed rule-based automatic transaction tax calculation conforming to tax regulations</li>
+                <li>Designed a streamlined POS cashier interface and inventory management dashboard</li>
+                <li>Conducted functional testing and user acceptance testing to validate system reliability</li>
+                <li>Achieved a final grade of 80.80 (A) and successfully defended before an academic panel</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="cursor.js"></script>
+</body>
+
+</html>
