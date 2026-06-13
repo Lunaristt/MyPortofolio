@@ -480,6 +480,7 @@ section {
   text-decoration: none;
   color: inherit;
   cursor: none;
+  border-radius: 5px;
 }
 
 .repo-card.visible {
@@ -658,6 +659,7 @@ a.org-card {
   color: inherit;
   display: block;
   cursor: none;
+  border-radius: 5px;
 }
 
 .org-card-arrow {
